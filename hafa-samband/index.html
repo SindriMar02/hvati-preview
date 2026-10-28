@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="is" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hafa samband | Byggingafélagið Hvati</title>
+<meta name="description" content="Hafðu samband við Byggingafélagið Hvata um kaup á eign, nýbyggingu eða atvinnuhúsnæði. Sími 893 0422, bhv@bhv.is.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1B2E">
+<link rel="icon" href="../favicon.png">
+<link rel="preload" href="../fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function () {
+  var root = document.documentElement;
+  function set(v) { if (root.getAttribute('data-input') !== v) root.setAttribute('data-input', v); }
+  addEventListener('pointerdown', function () { set('pointer'); }, true);
+  addEventListener('keydown', function (e) {
+    if (e.key === 'Shift' || e.key === 'Control' || e.key === 'Alt' || e.key === 'Meta') return;
+    set('key');
+  }, true);
+})();</script>
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Fara í efni</a>
+<header class="hdr hdr--solid">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Byggingafélagið Hvati, forsíða"><img src="../img/logo.png" width="26" height="38" alt=""><div><b>HVATI</b><span>BYGGINGAFÉLAG</span></div></a>
+    <nav class="nav" aria-label="Aðalvalmynd"><a href="../#eignir">Eignir</a><a href="../lodmundartangi/">Loðmundartangi</a><a href="../vesturbakki/">Vesturbakki</a><a href="../#um">Um okkur</a><a href="../hafa-samband/" aria-current="page">Hafa samband</a></nav>
+    <button class="btn btn--primary hdr-cta" type="button" data-request="">Óska eftir skoðun</button>
+    <button class="burger" type="button" aria-label="Opna valmynd" aria-expanded="false" aria-controls="menu"><i></i></button>
+  </div>
+</header>
+<div class="menu" id="menu" tabindex="-1" role="dialog" aria-modal="true" aria-label="Valmynd">
+  <button class="close" type="button" aria-label="Loka valmynd">×</button>
+  <a href="../#eignir">Eignir</a>
+  <a href="../lodmundartangi/">Loðmundartangi</a>
+  <a href="../vesturbakki/">Vesturbakki</a>
+  <a href="../#um">Um okkur</a>
+  <a href="../hafa-samband/">Hafa samband</a>
+  <button class="btn btn--light" type="button" data-request="">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button>
+</div>
+<main id="main">
+  <section class="section" style="padding-top:calc(var(--hdr) + 64px)">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow rise">Hafa samband</p>
+        <h1 class="title t-l rise" style="margin:12px 0 18px">Segðu okkur hvað þú ert að hugsa</h1>
+        <p class="lede rise">Hvort sem þú vilt skoða eign, láta byggja fyrir þig eða vantar atvinnuhúsnæði.</p>
+        <address class="addr rise">
+          <div><small>Sími</small><a href="tel:+3548930422">893 0422</a></div>
+          <div><small>Netfang</small><a href="mailto:bhv@bhv.is">bhv@bhv.is</a></div>
+          <div><small>Skrifstofa</small><span style="font-size:20px;font-weight:500">Tunguháls 17, 110 Reykjavík</span></div>
+        </address>
+      </div>
+      <div class="rise">
+        <form class="form" id="enquiry" novalidate>
+          <fieldset class="seg"><legend>Erindi</legend><label><input type="radio" name="erindi" value="kaupa" checked><span>Kaupa eign</span></label><label><input type="radio" name="erindi" value="byggja"><span>Byggja fyrir mig</span></label><label><input type="radio" name="erindi" value="atvinna"><span>Atvinnuhúsnæði</span></label></fieldset>
+          <div class="branch" data-branch="kaupa">
+            <div class="fld"><label for="e-eign">Eign</label><select id="e-eign" name="eign"><option value="lod-13">Loðmundartangi 13, Flúðum</option><option value="lod-15">Loðmundartangi 15, Flúðum</option><option value="lod-17">Loðmundartangi 17, Flúðum</option><option value="lod">Loðmundartangi, hvaða hús sem er</option><option value="vest">Vesturbakki 13, Þorlákshöfn</option></select></div>
+            <fieldset class="seg"><legend>Hvað viltu?</legend><label><input type="radio" name="vilt" value="Skoða eignina" checked><span>Skoða eignina</span></label><label><input type="radio" name="vilt" value="Fá verð og skilalýsingu"><span>Fá verð og skilalýsingu</span></label><label><input type="radio" name="vilt" value="Annað"><span>Annað</span></label></fieldset>
+          </div>
+          <div class="branch" data-branch="byggja" hidden>
+            <fieldset class="seg"><legend>Hvað á að byggja?</legend><label><input type="radio" name="tegund" value="Einbýli" checked><span>Einbýli</span></label><label><input type="radio" name="tegund" value="Raðhús"><span>Raðhús</span></label><label><input type="radio" name="tegund" value="Fjölbýli"><span>Fjölbýli</span></label><label><input type="radio" name="tegund" value="Annað"><span>Annað</span></label></fieldset>
+            <fieldset class="seg"><legend>Er lóð til staðar?</legend><label><input type="radio" name="lod" value="Já" checked><span>Já</span></label><label><input type="radio" name="lod" value="Nei"><span>Nei</span></label><label><input type="radio" name="lod" value="Í vinnslu"><span>Í vinnslu</span></label></fieldset>
+            <div class="row2"><div class="fld"><label for="e-stadur">Staðsetning</label><input id="e-stadur" name="stadur"></div><div class="fld"><label for="e-hvenaer">Hvenær viltu byrja?</label><input id="e-hvenaer" name="hvenaer" placeholder="t.d. vor 2027"></div></div>
+          </div>
+          <div class="branch" data-branch="atvinna" hidden>
+            <div class="row2"><div class="fld"><label for="e-fm">Stærð (m²)</label><input id="e-fm" name="fermetrar" inputmode="numeric"></div><div class="fld"><label for="e-notkun">Notkun</label><input id="e-notkun" name="notkun" placeholder="t.d. lager, verkstæði"></div></div>
+            <div class="fld"><label for="e-stadur2">Staðsetning</label><input id="e-stadur2" name="stadur"></div>
+          </div>
+          <div class="row2">
+            <div class="fld"><label for="e-nafn">Nafn</label><input id="e-nafn" name="nafn" autocomplete="name" required></div>
+            <div class="fld"><label for="e-email">Netfang</label><input id="e-email" name="netfang" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="fld"><label for="e-simi">Sími (valfrjálst)</label><input id="e-simi" name="simi" type="tel" autocomplete="tel"></div>
+          <div class="fld"><label for="e-msg">Skilaboð (valfrjálst)</label><textarea id="e-msg" name="skilabod" rows="4"></textarea></div>
+          <button class="btn btn--primary" type="submit" style="justify-self:start">Senda <span class="arr" aria-hidden="true">→</span></button>
+        </form>
+        <div class="done" id="enquiry-done" hidden tabindex="-1" role="status"><h3>Takk fyrir.</h3><p>Þetta er frumgerð. Fyrirspurnin var ekki send.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div><a class="brand" href="../" style="color:#fff"><img src="../img/logo.png" width="26" height="38" alt=""><div><b>HVATI</b><span>BYGGINGAFÉLAG</span></div></a>
+        <p style="margin:18px 0 0;max-width:22em">Vönduð íbúðarhús og atvinnuhúsnæði á Suðurlandi, byggð á meira en 40 ára reynslu eigendanna.</p></div>
+      <div><h4>Eignir</h4><ul><li><a href="../lodmundartangi/">Loðmundartangi, Flúðum</a></li><li><a href="../vesturbakki/">Vesturbakki, Þorlákshöfn</a></li></ul></div>
+      <div><h4>Hvati</h4><ul><li><a href="../#um">Um okkur</a></li><li><a href="../#thjonusta">Þjónusta</a></li><li><a href="../hafa-samband/">Hafa samband</a></li></ul></div>
+      <div><h4>Samband</h4><ul><li><a href="tel:+3548930422">893 0422</a></li><li><a href="mailto:bhv@bhv.is">bhv@bhv.is</a></li><li>Tunguháls 17, 110 Reykjavík</li></ul></div>
+    </div>
+    <div class="legal"><span>© Byggingafélagið Hvati ehf.</span><span>Frumgerð frá SNDR Studio. Ekkert er sent úr þessari útgáfu.</span></div>
+  </div>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-t" tabindex="-1">
+  <div class="sheet__in">
+    <div class="sheet__top"><div><p class="eyebrow">Skoðun</p><h2 id="sheet-t">Óska eftir skoðun</h2></div><button class="x" type="button" aria-label="Loka">×</button></div>
+    <form class="form" novalidate>
+      <div class="fld"><label for="rq-unit">Eign</label><select id="rq-unit" name="eign"><option value="lod-13">Loðmundartangi 13, Flúðum</option><option value="lod-15">Loðmundartangi 15, Flúðum</option><option value="lod-17">Loðmundartangi 17, Flúðum</option><option value="lod">Loðmundartangi, hvaða hús sem er</option><option value="vest">Vesturbakki 13, Þorlákshöfn</option></select></div>
+      <fieldset class="seg"><legend>Hvaða dagar henta?</legend><label><input type="radio" name="dagar" value="Virka daga"><span>Virka daga</span></label><label><input type="radio" name="dagar" value="Um helgi"><span>Um helgi</span></label><label><input type="radio" name="dagar" value="Skiptir ekki máli" checked><span>Skiptir ekki máli</span></label></fieldset>
+      <fieldset class="seg"><legend>Hvaða tími dags?</legend><label><input type="radio" name="timi" value="Fyrir hádegi"><span>Fyrir hádegi</span></label><label><input type="radio" name="timi" value="Eftir hádegi" checked><span>Eftir hádegi</span></label><label><input type="radio" name="timi" value="Síðdegis"><span>Síðdegis</span></label></fieldset>
+      <div class="row2">
+        <div class="fld"><label for="rq-name">Nafn</label><input id="rq-name" name="nafn" autocomplete="name" required></div>
+        <div class="fld"><label for="rq-contact">Sími eða netfang</label><input id="rq-contact" name="samband" autocomplete="email" required></div>
+      </div>
+      <div class="fld"><label for="rq-msg">Athugasemd (valfrjálst)</label><textarea id="rq-msg" name="athugasemd" rows="3"></textarea></div>
+      <p class="note">Hvati hefur samband og staðfestir tíma. Engin bókun verður til fyrr en tíminn er staðfestur.</p>
+      <button class="btn btn--primary" type="submit">Senda ósk um skoðun <span class="arr" aria-hidden="true">→</span></button>
+    </form>
+    <div class="done" hidden tabindex="-1" role="status"><h3>Takk fyrir.</h3><p>Þetta er frumgerð. Fyrirspurnin var ekki send.</p></div>
+  </div>
+</dialog>
+</body>
+</html>

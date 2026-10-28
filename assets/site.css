@@ -487,3 +487,11 @@ html.motion .hvs__index button[aria-current="true"] .bar i{transform:scaleX(0)}
 .hvs__stage{z-index:0}
 .hvs__shade{z-index:1;background:linear-gradient(0deg,rgba(6,14,24,.88) 0%,rgba(6,14,24,.5) 36%,rgba(6,14,24,.12) 60%,rgba(6,14,24,.5) 88%,rgba(6,14,24,.62) 100%)}
 .hvs__content{z-index:2}
+@media (max-width:639px){
+  .unit > button{grid-template-columns:1fr 32px;grid-template-areas:"t pm" "s pm";row-gap:8px;padding:16px 0}
+  .unit__n{display:none}
+  .unit > button > span:nth-child(2){grid-area:t}
+  .unit > button .status{grid-area:s;justify-self:start}
+  .unit > button .pm{grid-area:pm}
+}
+.status{white-space:nowrap}

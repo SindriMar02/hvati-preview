@@ -96,7 +96,7 @@ html[data-input="pointer"] :focus-visible:not(input):not(textarea):not(select):n
 /* reveal */
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity var(--d2) var(--ease),transform var(--d2) var(--ease)}
 [data-reveal].in{opacity:1;transform:none}
-.no-js [data-reveal]{opacity:1;transform:none}
+.no-js [data-reveal],.no-js .rise,.no-js .hero__img img{opacity:1;transform:none}
 @media (max-width:899px){[data-reveal]{transform:translateY(16px)}}
 
 /* listing cards */

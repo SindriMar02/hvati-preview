@@ -4,7 +4,7 @@
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Opening arrival: content is readable from the start; the class only adds the settle.
-  function ready() { requestAnimationFrame(function () { doc.classList.add('is-ready'); }); }
+  function ready() { setTimeout(function () { doc.classList.add('is-ready'); }, 30); }
   var heroImg = document.querySelector('.hero__img img');
   if (heroImg && !heroImg.complete) { heroImg.addEventListener('load', ready, { once: true }); setTimeout(ready, 900); } else ready();
 
@@ -33,7 +33,7 @@
   function focusOpen(e, panel, first) { (e && e.detail === 0 && first ? first : panel).focus({ preventScroll: true }); }
 
   // Mobile menu
-  var burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+  var burger = document.querySelector('.burger'), menu = document.getElementById('menu'), closeMenuQuietly = function () {};
   if (burger && menu) {
     var closeBtn = menu.querySelector('.close');
     var setMenu = function (open, e) {
@@ -47,6 +47,12 @@
     closeBtn.addEventListener('click', function (e) { setMenu(false, e); });
     menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
     menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    // A request opened from the menu replaces it: close without moving focus back to the burger.
+    closeMenuQuietly = function () {
+      if (!menu.classList.contains('is-open')) return;
+      menu.classList.remove('is-open'); burger.setAttribute('aria-expanded', false); menu.setAttribute('inert', '');
+      document.body.style.overflow = '';
+    };
   }
 
   // Gallery tabs + lightbox
@@ -122,8 +128,10 @@
     var form = sheet.querySelector('form'), unitSel = sheet.querySelector('#rq-unit'), done = sheet.querySelector('.done');
     document.querySelectorAll('[data-request]').forEach(function (b) {
       b.addEventListener('click', function (e) {
-        e.preventDefault(); trigger = b;
-        if (b.dataset.request && unitSel) unitSel.value = b.dataset.request;
+        e.preventDefault();
+        var fromMenu = !!b.closest('.menu'); closeMenuQuietly();
+        trigger = fromMenu ? burger : b;
+        if (unitSel) unitSel.value = b.dataset.request || 'lod';
         form.hidden = false; done.hidden = true;
         sheet.showModal(); document.body.style.overflow = 'hidden';
         focusOpen(e, sheet, sheet.querySelector('.x'));

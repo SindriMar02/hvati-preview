@@ -29,6 +29,15 @@
     el.innerHTML = words.map(function (w) { return '<span class="w" aria-hidden="true"><span>' + w + '</span></span>'; }).join(' ');
   });
 
+  // Reveals use IntersectionObserver (real positions, survives jump scrolls); ScrollTrigger only scrubs parallax.
+  function onEnter(els, fn, margin) {
+    var io = new IntersectionObserver(function (en) {
+      var hit = en.filter(function (e) { return e.isIntersecting; }).map(function (e) { io.unobserve(e.target); return e.target; });
+      if (hit.length) fn(hit);
+    }, { rootMargin: margin || '0px 0px -10% 0px' });
+    [].forEach.call(els, function (el) { io.observe(el); });
+  }
+
   if (motion) {
     // In-hero headings play on load; the rest on enter.
     splits.forEach(function (el) {
@@ -36,22 +45,22 @@
       G.set(inner, { yPercent: 110 });
       var play = function () { G.to(inner, { yPercent: 0, duration: 1.1, ease: 'power4.out', stagger: 0.04 }); };
       if (el.closest('.hvs')) G.delayedCall(0.15, play);
-      else ST.create({ trigger: el, start: 'top 88%', once: true, onEnter: play });
+      else onEnter([el], play);
     });
     var heroBits = document.querySelectorAll('.hvs__lead > :not(h1), .hvs__panel');
     G.from(heroBits, { y: 24, autoAlpha: 0, duration: 1, ease: 'power3.out', stagger: 0.08, delay: 0.35 });
 
     G.set('[data-reveal]', { y: 40, autoAlpha: 0 });
-    ST.batch('[data-reveal]', { start: 'top 90%', once: true, onEnter: function (b) { G.to(b, { y: 0, autoAlpha: 1, duration: 0.9, ease: 'power3.out', stagger: 0.08, overwrite: true }); } });
+    onEnter(document.querySelectorAll('[data-reveal]'), function (b) { G.to(b, { y: 0, autoAlpha: 1, duration: 0.9, ease: 'power3.out', stagger: 0.08, overwrite: true }); }, '0px 0px -6% 0px');
 
     document.querySelectorAll('[data-clip]').forEach(function (el) {
       var im = el.querySelector('img, svg');
       G.set(el, { clipPath: 'inset(0% 0% 100% 0%)' });
       if (im && im.tagName === 'IMG' && !el.hasAttribute('data-parallax')) G.set(im, { scale: 1.15 });
-      ST.create({ trigger: el, start: 'top 85%', once: true, onEnter: function () {
+      onEnter([el], function () {
         G.to(el, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'power4.inOut' });
         if (im && im.tagName === 'IMG' && !el.hasAttribute('data-parallax')) G.to(im, { scale: 1, duration: 1.6, ease: 'power3.out' });
-      } });
+      });
     });
 
     document.querySelectorAll('[data-parallax]').forEach(function (el) {
@@ -62,13 +71,13 @@
     document.querySelectorAll('[data-count]').forEach(function (el) {
       var to = +el.dataset.count, from = +(el.dataset.from || 0), o = { v: from };
       el.textContent = from;
-      ST.create({ trigger: el, start: 'top 90%', once: true, onEnter: function () {
+      onEnter([el], function () {
         G.to(o, { v: to, duration: 1.6, ease: 'power2.out', onUpdate: function () { el.textContent = Math.round(o.v); } });
-      } });
+      });
     });
 
     var dim = document.querySelector('.door__dim');
-    if (dim) { G.set(dim, { autoAlpha: 0 }); ST.create({ trigger: dim, start: 'top 80%', once: true, onEnter: function () { G.to(dim, { autoAlpha: 1, duration: 0.8, delay: 0.9 }); } }); }
+    if (dim) { G.set(dim, { autoAlpha: 0 }); onEnter([dim], function () { G.to(dim, { autoAlpha: 1, duration: 0.8, delay: 0.9 }); }); }
 
     // Refresh trigger positions once fonts and late images settle.
     if (document.fonts) document.fonts.ready.then(function () { ST.refresh(); });

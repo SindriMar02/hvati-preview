@@ -19,6 +19,8 @@
   }, true);
 })();</script>
 <link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/vendor/gsap.min.js" defer></script>
+<script src="../assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="../assets/site.js" defer></script>
 </head>
 <body>
@@ -41,50 +43,66 @@
   <button class="btn btn--light" type="button" data-request="vest">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button>
 </div>
 <main id="main">
-  <section class="hero hero--sub">
-    <div class="hero__img"><img src="../img/vest-air.webp" srcset="../img/vest-air-800.webp 800w, ../img/vest-air.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Vesturbakki í Þorlákshöfn úr lofti" fetchpriority="high"></div>
-    <div class="wrap">
-      <p class="rise"><span class="status">Til sölu</span></p>
-      <h1 class="title t-xl rise">Vesturbakki 13</h1>
-      <ul class="facts rise"><li>Þorlákshöfn</li><li>72 m²</li><li>4,35 m há innkeyrsluhurð</li><li>24.900.000 kr.</li></ul>
-      <div class="ctas rise"><button class="btn btn--light" type="button" data-request="vest">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button><a class="btn btn--line" href="#mal">Mál og búnaður</a></div>
+  
+<section class="hvs" data-hvs aria-roledescription="myndasýning" aria-label="Myndir af Vesturbakka">
+  <div class="hvs__stage">
+    <figure class="hvs__slide is-on" aria-hidden="false"><img src="../img/vest-air.webp" srcset="../img/vest-air-800.webp 800w, ../img/vest-air.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Vesturbakki í Þorlákshöfn úr lofti" fetchpriority="high" decoding="async"></figure>
+    <figure class="hvs__slide" aria-hidden="true"><img src="../img/vest-door.webp" srcset="../img/vest-door-800.webp 800w, ../img/vest-door.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Rýmið og innkeyrsluhurðin" decoding="async"></figure>
+    <figure class="hvs__slide" aria-hidden="true"><img src="../img/vest-hall.webp" srcset="../img/vest-hall-800.webp 800w, ../img/vest-hall.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Rýmið séð frá hurð" decoding="async"></figure>
+    <figure class="hvs__slide" aria-hidden="true"><img src="../img/vest-hall-3.webp" srcset="../img/vest-hall-3-800.webp 800w, ../img/vest-hall-3.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Inngangur og innkeyrsluhurð" decoding="async"></figure>
+  </div>
+  <div class="hvs__shade" aria-hidden="true"></div>
+  <div class="wrap hvs__content">
+    <div class="hvs__lead"><p><span class="status">Til sölu</span></p>
+      <h1 class="title t-xl" data-split>Vesturbakki 13</h1>
+      <ul class="facts"><li>Þorlákshöfn</li><li>72 m²</li><li>24.900.000 kr.</li></ul>
+      <div class="ctas"><button class="btn btn--light" type="button" data-request="vest">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button><a class="btn btn--line" href="#mal">Mál og búnaður</a></div></div>
+    <div class="hvs__panel">
+      <p class="hvs__count" aria-live="polite"><b>01</b> / 04</p>
+      <p class="hvs__caption"><b>Vesturbakki</b><span>Skammt frá höfninni</span></p>
+      <ol class="hvs__index">
+        <li><button type="button" aria-current="true" aria-label="Mynd 1: Vesturbakki"><span class="n">01</span><span class="t">Vesturbakki</span><span class="d">Skammt frá höfninni</span><span class="bar"><i></i></span></button></li>
+        <li><button type="button" aria-label="Mynd 2: Innkeyrsluhurðin"><span class="n">02</span><span class="t">Innkeyrsluhurðin</span><span class="d">4,35 m á hæð</span><span class="bar"><i></i></span></button></li>
+        <li><button type="button" aria-label="Mynd 3: Rýmið"><span class="n">03</span><span class="t">Rýmið</span><span class="d">Mikil lofthæð og gólfhiti</span><span class="bar"><i></i></span></button></li>
+        <li><button type="button" aria-label="Mynd 4: Inngangur"><span class="n">04</span><span class="t">Inngangur</span><span class="d">3ja fasa rafmagn</span><span class="bar"><i></i></span></button></li>
+      </ol>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section">
-    <div class="wrap split" style="align-items:start">
-      <div data-reveal>
-        <p class="eyebrow">Bilið</p>
-        <h2 class="title t-l" style="margin:12px 0 20px">Pláss sem þú getur gert að þínu</h2>
-        <p class="lede">Fullbúið 72 m² lager-, geymslu- eða hobbýbil skammt frá höfninni í Þorlákshöfn. Fyrir hjólhýsið, húsbílinn, bátinn eða bílinn, eða meira pláss fyrir fyrirtækið, lagerinn og tækin.</p>
+    <div class="wrap glance">
+      <div>
+        <p class="eyebrow" data-reveal>Í stuttu máli</p>
+        <h2 class="title t-l" data-split>Pláss sem þú getur gert að þínu</h2>
+        <p class="lede" data-reveal>Fullbúið lager-, geymslu- eða hobbýbil skammt frá höfninni í Þorlákshöfn. Fyrir hjólhýsið, húsbílinn, bátinn eða bílinn, eða meira pláss fyrir fyrirtækið, lagerinn og tækin.</p>
+        <p class="eyebrow" style="margin-top:36px" data-reveal>Auglýst verð</p>
+        <p class="price" data-reveal>24.900.000 kr.</p>
+        <p class="src" data-reveal>Samkvæmt bhv.is, 28. október 2026. Hvati staðfestir verð og stöðu.</p>
       </div>
-      <div data-reveal>
-        <p class="eyebrow">Auglýst verð</p>
-        <p class="price">24.900.000 kr.</p>
-        <p class="src" style="margin-top:6px">Samkvæmt bhv.is, 28. október 2026. Hvati staðfestir verð og stöðu.</p>
-      </div>
+      <ul class="tiles"><li data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h4M16 4v4M20 15h-4M8 20v-4"/></svg><span class="k">Stærð</span><span class="v">72 m²</span></li><li data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4h16v17M4 21h16M4 8h16M4 12h16M4 16h16"/></svg><span class="k">Hurð, hæð</span><span class="v">4,35 m</span></li><li data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20c-2-3 2-5 0-8s2-5 0-8M12 20c-2-3 2-5 0-8s2-5 0-8M16 20c-2-3 2-5 0-8s2-5 0-8"/></svg><span class="k">Gólf</span><span class="v">Gólfhiti</span></li><li data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span class="k">Rafmagn</span><span class="v">3ja fasa</span></li><li data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21 9 3M18 21 15 3M12 4v3M12 11v3M12 18v3"/></svg><span class="k">Lóð</span><span class="v">Malbikuð</span></li><li data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span class="k">Staður</span><span class="v">Þorlákshöfn</span></li></ul>
     </div>
   </section>
 
   <section class="section section--sand" id="mal">
     <div class="wrap split" style="align-items:start">
-      <div class="door" data-reveal><svg viewBox="0 0 560 424" role="img" aria-labelledby="door-t" font-family="DM Sans, sans-serif">
+      <div class="door" data-clip><svg viewBox="0 0 560 424" role="img" aria-labelledby="door-t" font-family="DM Sans, sans-serif">
   <title id="door-t">Framhlið bilsins: innkeyrsluhurð 4,35 m á hæð, breidd óstaðfest</title>
   <rect x="40" y="40" width="420" height="340" fill="#F6F4F0" stroke="#0B1B2E" stroke-width="2"/>
-  <rect x="120" y="72" width="260" height="308" fill="#ECE6DC" stroke="#0B1B2E" stroke-width="2"/>
+  <rect class="door__leaf" x="120" y="72" width="260" height="308" fill="#ECE6DC" stroke="#0B1B2E" stroke-width="2"/>
   <line x1="120" x2="380" y1="100" y2="100" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="128" y2="128" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="156" y2="156" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="184" y2="184" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="212" y2="212" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="240" y2="240" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="268" y2="268" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="296" y2="296" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="324" y2="324" stroke="#0B1B2E" stroke-opacity=".25"/><line x1="120" x2="380" y1="352" y2="352" stroke="#0B1B2E" stroke-opacity=".25"/>
-  <line x1="500" x2="500" y1="72" y2="380" stroke="#27519A" stroke-width="2"/>
+  <g class="door__dim"><line x1="500" x2="500" y1="72" y2="380" stroke="#27519A" stroke-width="2"/>
   <line x1="490" x2="510" y1="72" y2="72" stroke="#27519A" stroke-width="2"/><line x1="490" x2="510" y1="380" y2="380" stroke="#27519A" stroke-width="2"/>
-  <text x="526" y="232" fill="#27519A" font-size="28" font-weight="500" transform="rotate(-90 526 232)" text-anchor="middle">4,35 m</text>
+  <text x="526" y="232" fill="#27519A" font-size="28" font-weight="500" transform="rotate(-90 526 232)" text-anchor="middle">4,35 m</text></g>
   <line x1="120" x2="380" y1="412" y2="412" stroke="#8A6D1E" stroke-width="2" stroke-dasharray="6 6"/>
   <text x="250" y="398" fill="#8A6D1E" font-size="22" text-anchor="middle">breidd óstaðfest</text>
   <line x1="20" x2="540" y1="380" y2="380" stroke="#0B1B2E" stroke-width="3"/>
 </svg></div>
-      <div data-reveal>
-        <p class="eyebrow">Mál og búnaður</p>
-        <h2 class="title t-l" style="margin:12px 0 0">Kemst þetta inn?</h2>
-        <p class="lede" style="margin-top:14px">Berðu málin saman við hæð og breidd tækisins, með speglum og búnaði á þaki. Gildi sem eru óstaðfest þarf að fá hjá Hvata áður en þú treystir á þau.</p>
-        <table class="dims">
+      <div>
+        <p class="eyebrow" data-reveal>Mál og búnaður</p>
+        <h2 class="title t-l" data-split>Kemst þetta inn?</h2>
+        <p class="lede" style="margin-top:14px" data-reveal>Berðu málin saman við hæð og breidd tækisins, með speglum og búnaði á þaki. Gildi sem eru óstaðfest þarf að fá hjá Hvata áður en þú treystir á þau.</p>
+        <table class="dims" data-reveal>
           <tr><th scope="row">Stærð</th><td>72 m²</td></tr>
           <tr><th scope="row">Innkeyrsluhurð, hæð</th><td>4,35 m</td></tr>
           <tr><th scope="row">Innkeyrsluhurð, breidd</th><td class="unk">Óstaðfest</td></tr>
@@ -98,29 +116,46 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--tight">
     <div class="wrap">
-      <div class="head" data-reveal><div><p class="eyebrow">Myndir</p><h2 class="title t-l">Inni í bilinu</h2></div></div>
+      <div class="head"><div><p class="eyebrow" data-reveal>Myndir</p><h2 class="title t-l" data-split>Inni í bilinu</h2></div></div>
       
-<div data-gallery>
-  
-  <div class="gal"><button type="button" data-cat="all" data-full="../img/vest-door.webp" aria-label="Stækka: Rýmið og innkeyrsluhurðin"><img src="../img/vest-door.webp" srcset="../img/vest-door-800.webp 800w, ../img/vest-door.webp 1600w" sizes="(min-width:900px) 50vw, 50vw" width="1600" height="1067" alt="Rýmið og innkeyrsluhurðin" loading="lazy" decoding="async"></button><button type="button" data-cat="all" data-full="../img/vest-hall.webp" aria-label="Stækka: Rýmið séð frá hurð"><img src="../img/vest-hall.webp" srcset="../img/vest-hall-800.webp 800w, ../img/vest-hall.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Rýmið séð frá hurð" loading="lazy" decoding="async"></button><button type="button" data-cat="all" data-full="../img/vest-hall-2.webp" aria-label="Stækka: Lofthæð og veggir"><img src="../img/vest-hall-2.webp" srcset="../img/vest-hall-2-800.webp 800w, ../img/vest-hall-2.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Lofthæð og veggir" loading="lazy" decoding="async"></button><button type="button" data-cat="all" data-full="../img/vest-hall-3.webp" aria-label="Stækka: Inngangur og innkeyrsluhurð"><img src="../img/vest-hall-3.webp" srcset="../img/vest-hall-3-800.webp 800w, ../img/vest-hall-3.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Inngangur og innkeyrsluhurð" loading="lazy" decoding="async"></button><button type="button" data-cat="all" data-full="../img/vest-air.webp" aria-label="Stækka: Vesturbakki úr lofti"><img src="../img/vest-air.webp" srcset="../img/vest-air-800.webp 800w, ../img/vest-air.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Vesturbakki úr lofti" loading="lazy" decoding="async"></button></div>
+<div class="car" data-carousel data-gallery>
+  <div class="car__top">
+    <span></span>
+    <div class="car__nav"><span class="car__count" aria-live="polite">01 / 05</span><button class="car__btn prev" type="button" aria-label="Fyrri myndir">←</button><button class="car__btn next" type="button" aria-label="Næstu myndir">→</button></div>
+  </div>
+  <div class="car__track gal" tabindex="0" aria-label="Myndir af bilinu">
+    <button class="car__item" type="button" data-cat="all" data-full="../img/vest-door.webp" aria-label="Stækka: Rýmið og innkeyrsluhurðin"><span class="car__img"><img src="../img/vest-door.webp" srcset="../img/vest-door-800.webp 800w, ../img/vest-door.webp 1600w" sizes="(min-width:900px) 40vw, 82vw" width="1600" height="1067" alt="Rýmið og innkeyrsluhurðin" loading="lazy" decoding="async"></span><span class="car__cap">Rýmið og innkeyrsluhurðin</span></button>
+    <button class="car__item" type="button" data-cat="all" data-full="../img/vest-hall.webp" aria-label="Stækka: Rýmið séð frá hurð"><span class="car__img"><img src="../img/vest-hall.webp" srcset="../img/vest-hall-800.webp 800w, ../img/vest-hall.webp 1600w" sizes="(min-width:900px) 40vw, 82vw" width="1600" height="1067" alt="Rýmið séð frá hurð" loading="lazy" decoding="async"></span><span class="car__cap">Rýmið séð frá hurð</span></button>
+    <button class="car__item" type="button" data-cat="all" data-full="../img/vest-hall-2.webp" aria-label="Stækka: Lofthæð og veggir"><span class="car__img"><img src="../img/vest-hall-2.webp" srcset="../img/vest-hall-2-800.webp 800w, ../img/vest-hall-2.webp 1600w" sizes="(min-width:900px) 40vw, 82vw" width="1600" height="1067" alt="Lofthæð og veggir" loading="lazy" decoding="async"></span><span class="car__cap">Lofthæð og veggir</span></button>
+    <button class="car__item" type="button" data-cat="all" data-full="../img/vest-hall-3.webp" aria-label="Stækka: Inngangur og innkeyrsluhurð"><span class="car__img"><img src="../img/vest-hall-3.webp" srcset="../img/vest-hall-3-800.webp 800w, ../img/vest-hall-3.webp 1600w" sizes="(min-width:900px) 40vw, 82vw" width="1600" height="1067" alt="Inngangur og innkeyrsluhurð" loading="lazy" decoding="async"></span><span class="car__cap">Inngangur og innkeyrsluhurð</span></button>
+    <button class="car__item" type="button" data-cat="all" data-full="../img/vest-air.webp" aria-label="Stækka: Vesturbakki úr lofti"><span class="car__img"><img src="../img/vest-air.webp" srcset="../img/vest-air-800.webp 800w, ../img/vest-air.webp 1600w" sizes="(min-width:900px) 40vw, 82vw" width="1600" height="1067" alt="Vesturbakki úr lofti" loading="lazy" decoding="async"></span><span class="car__cap">Vesturbakki úr lofti</span></button>
+  </div>
   <dialog class="lb" tabindex="-1" aria-label="Myndasafn"><figure style="margin:0"><img alt=""><figcaption></figcaption></figure>
     <button class="lb-x" type="button" aria-label="Loka">×</button><button class="lb-nav prev" type="button" aria-label="Fyrri mynd">←</button><button class="lb-nav next" type="button" aria-label="Næsta mynd">→</button></dialog>
 </div>
     </div>
   </section>
 
-  <section class="section section--ink">
-    <div class="wrap split">
-      <div data-reveal><p class="eyebrow">Skoðun</p><h2 class="title t-l" style="margin:12px 0 0">Komdu og mældu bilið</h2></div>
-      <div data-reveal style="justify-self:start"><button class="btn btn--light" type="button" data-request="vest">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button>
-        <p style="margin:16px 0 0"><a href="tel:+3548930422" style="font-size:22px;font-weight:500;text-decoration:none">893 0422</a></p></div>
+  <section class="section section--sand">
+    <div class="wrap faqwrap">
+      <div><p class="eyebrow" data-reveal>Spurningar</p><h2 class="title t-l" data-split>Gott að vita</h2></div>
+      <div class="acc"><div class="acc__i" data-reveal><button type="button" aria-expanded="false" aria-controls="faq0"><span>Kemst hjólhýsið eða húsbíllinn inn?</span><span class="pm" aria-hidden="true"></span></button><div class="acc__b" id="faq0"><div><p>Innkeyrsluhurðin er 4,35 m á hæð. Breidd hurðar og dýpt rýmis eru óstaðfest hér. Fáðu málin hjá Hvata og berðu saman við tækið þitt.</p></div></div></div><div class="acc__i" data-reveal><button type="button" aria-expanded="false" aria-controls="faq1"><span>Hvað kostar bilið?</span><span class="pm" aria-hidden="true"></span></button><div class="acc__b" id="faq1"><div><p>Auglýst verð á bhv.is er 24.900.000 kr. (28. október 2026). Hvati staðfestir verð og stöðu.</p></div></div></div><div class="acc__i" data-reveal><button type="button" aria-expanded="false" aria-controls="faq2"><span>Til hvers má nota bilið?</span><span class="pm" aria-hidden="true"></span></button><div class="acc__b" id="faq2"><div><p>Bilið er auglýst sem lager-, geymslu- eða hobbýbil. Hvati svarar hvort tiltekin starfsemi fellur undir það.</p></div></div></div><div class="acc__i" data-reveal><button type="button" aria-expanded="false" aria-controls="faq3"><span>Hvernig fer skoðun fram?</span><span class="pm" aria-hidden="true"></span></button><div class="acc__b" id="faq3"><div><p>Þú sendir ósk um skoðun með þeim tíma sem hentar og Hvati hefur samband til að staðfesta. Einnig má hringja beint í 893 0422.</p></div></div></div></div>
+    </div>
+  </section>
+
+  <section class="band band--ink">
+    <div class="wrap band__in">
+      <p class="eyebrow">Vesturbakki 13</p>
+      <h2 class="title t-l" data-split>Komdu og mældu bilið</h2>
+      <div class="ctas" data-reveal><button class="btn btn--light" type="button" data-request="vest">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button><a class="btn btn--line" href="tel:+3548930422">893 0422</a></div>
     </div>
   </section>
 </main>
 <footer class="ftr">
   <div class="wrap">
+    <div class="ftr__big" data-reveal><p>Viltu skoða?</p><a href="tel:+3548930422">893 0422</a></div>
     <div class="grid">
       <div><a class="brand" href="../" style="color:#fff"><img src="../img/logo.png" width="26" height="38" alt=""><div><b>HVATI</b><span>BYGGINGAFÉLAG</span></div></a>
         <p style="margin:18px 0 0;max-width:22em">Vönduð íbúðarhús og atvinnuhúsnæði á Suðurlandi, byggð á meira en 40 ára reynslu eigendanna.</p></div>
@@ -131,6 +166,7 @@
     <div class="legal"><span>© Byggingafélagið Hvati ehf.</span><span>Frumgerð frá SNDR Studio. Ekkert er sent úr þessari útgáfu.</span></div>
   </div>
 </footer>
+<div class="sbar" aria-hidden="true"><div><b>Vesturbakki 13</b><span>72 m² · 24,9 m.kr.</span></div><button class="btn btn--primary" type="button" data-request="vest" tabindex="-1">Óska eftir skoðun</button></div>
 
 <dialog class="sheet" id="sheet" aria-labelledby="sheet-t" tabindex="-1">
   <div class="sheet__in">

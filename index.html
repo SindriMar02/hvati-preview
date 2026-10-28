@@ -19,6 +19,8 @@
   }, true);
 })();</script>
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="assets/site.js" defer></script>
 </head>
 <body>
@@ -41,72 +43,143 @@
   <button class="btn btn--light" type="button" data-request="">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button>
 </div>
 <main id="main">
-  <section class="hero">
-    <div class="hero__img"><img src="img/lod-front-air.webp" srcset="img/lod-front-air-800.webp 800w, img/lod-front-air.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Raðhúsin við Loðmundartanga á Flúðum, séð úr lofti" fetchpriority="high"></div>
+  
+<section class="hvs" data-hvs aria-roledescription="myndasýning" aria-label="Eignir Hvata">
+  <div class="hvs__stage">
+    <figure class="hvs__slide is-on" aria-hidden="false"><img src="img/lod-front-air.webp" srcset="img/lod-front-air-800.webp 800w, img/lod-front-air.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Raðhúsin við Loðmundartanga á Flúðum úr lofti" fetchpriority="high" decoding="async"></figure>
+    <figure class="hvs__slide" aria-hidden="true"><img src="img/lod-kitchen.webp" srcset="img/lod-kitchen-800.webp 800w, img/lod-kitchen.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Eldhús í Loðmundartanga með Scavolini innréttingu" decoding="async"></figure>
+    <figure class="hvs__slide" aria-hidden="true"><img src="img/lod-pot.webp" srcset="img/lod-pot-800.webp 800w, img/lod-pot.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Heitur pottur á pallinum við stofuna" decoding="async"></figure>
+    <figure class="hvs__slide" aria-hidden="true"><img src="img/vest-door.webp" srcset="img/vest-door-800.webp 800w, img/vest-door.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Rýmið í Vesturbakka 13 með háa innkeyrsluhurð" decoding="async"></figure>
+  </div>
+  <div class="hvs__shade" aria-hidden="true"></div>
+  <div class="wrap hvs__content">
+    <div class="hvs__lead"><p class="eyebrow">Byggingafélagið Hvati</p>
+      <h1 class="title t-xl" data-split>Vönduð hús, tilbúin til afhendingar</h1>
+      <div class="ctas"><a class="btn btn--light" href="#eignir">Skoða eignir <span class="arr" aria-hidden="true">→</span></a><button class="btn btn--line" type="button" data-request="lod">Óska eftir skoðun</button></div></div>
+    <div class="hvs__panel">
+      <p class="hvs__count" aria-live="polite"><b>01</b> / 04</p>
+      <p class="hvs__caption"><b>Loðmundartangi</b><span>Raðhús á Flúðum, tilbúin</span></p>
+      <ol class="hvs__index">
+        <li><button type="button" aria-current="true" aria-label="Mynd 1: Loðmundartangi"><span class="n">01</span><span class="t">Loðmundartangi</span><span class="d">Raðhús á Flúðum, tilbúin</span><span class="bar"><i></i></span></button></li>
+        <li><button type="button" aria-label="Mynd 2: Eldhúsið"><span class="n">02</span><span class="t">Eldhúsið</span><span class="d">Scavolini og Luna kvarts</span><span class="bar"><i></i></span></button></li>
+        <li><button type="button" aria-label="Mynd 3: Pallurinn"><span class="n">03</span><span class="t">Pallurinn</span><span class="d">Heitur pottur með WiFi-stýringu</span><span class="bar"><i></i></span></button></li>
+        <li><button type="button" aria-label="Mynd 4: Vesturbakki"><span class="n">04</span><span class="t">Vesturbakki</span><span class="d">72 m² bil í Þorlákshöfn</span><span class="bar"><i></i></span></button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+  <section class="section intro" id="um">
     <div class="wrap">
-      <p class="eyebrow rise">Til sölu · Loðmundartangi, Flúðum</p>
-      <h1 class="title t-xl rise">Fullbúin raðhús á Flúðum, tilbúin til afhendingar</h1>
-      <ul class="facts rise"><li>4 herbergi</li><li>132,1 m² með 33,5 m² bílskúr</li><li>Heitur pottur</li><li>Ítalskar innréttingar</li></ul>
-      <div class="ctas rise"><a class="btn btn--light" href="lodmundartangi/">Skoða eignina <span class="arr" aria-hidden="true">→</span></a><button class="btn btn--line" type="button" data-request="lod">Óska eftir skoðun</button></div>
+      <p class="eyebrow" data-reveal>Um Hvata</p>
+      <p class="intro__text" data-split>Hvati byggir vönduð íbúðarhús og atvinnuhúsnæði á Suðurlandi. Ungt félag frá 2021, byggt á meira en fjörutíu ára reynslu eigendanna, allt frá einkaheimilum til stórbygginga.</p>
+      <dl class="stats">
+        <div data-reveal><dt>Stofnað</dt><dd data-count="2021" data-from="1990">2021</dd></div>
+        <div data-reveal><dt>Reynsla eigenda</dt><dd><span data-count="40">40</span>+ ár</dd></div>
+        <div data-reveal><dt>Eignir til sölu</dt><dd data-count="2">2</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="section" id="eignir">
+  <section class="section section--tight" id="eignir">
     <div class="wrap">
-      <div class="head" data-reveal><div><p class="eyebrow">Eignir til sölu</p><h2 class="title t-l">Tvær eignir, öll svör á einum stað</h2></div><p class="lede" style="max-width:28em">Myndir, skipulag, efnisval og kaupskilmálar fyrir hverja eign. Það sem er óstaðfest er merkt sem slíkt.</p></div>
-      <div class="cards">
-        <a class="card" href="lodmundartangi/" data-reveal>
-          <div class="card__img"><img src="img/lod-front.webp" srcset="img/lod-front-800.webp 800w, img/lod-front.webp 1600w" sizes="(min-width:900px) 50vw, 100vw" width="1600" height="1067" alt="Framhlið raðhúsanna við Loðmundartanga" loading="lazy" decoding="async"><span class="status">Tilbúið til afhendingar</span></div>
-          <h3>Loðmundartangi 13, 15, 17 <span class="arr" aria-hidden="true">→</span></h3><p class="where">Flúðir · Raðhús</p>
-          <dl class="factrow"><div><dt>Herbergi</dt><dd>4</dd></div><div><dt>Stærð</dt><dd>132,1 m²</dd></div><div><dt>Bílskúr</dt><dd>33,5 m²</dd></div><div><dt>Verð</dt><dd>Ekki birt</dd></div></dl>
-        </a>
-        <a class="card" href="vesturbakki/" data-reveal>
-          <div class="card__img"><img src="img/vest-door.webp" srcset="img/vest-door-800.webp 800w, img/vest-door.webp 1600w" sizes="(min-width:900px) 50vw, 100vw" width="1600" height="1067" alt="Rýmið í Vesturbakka 13 með innkeyrsluhurð" loading="lazy" decoding="async"><span class="status">Til sölu</span></div>
-          <h3>Vesturbakki 13 <span class="arr" aria-hidden="true">→</span></h3><p class="where">Þorlákshöfn · Geymslu- og atvinnubil</p>
-          <dl class="factrow"><div><dt>Stærð</dt><dd>72 m²</dd></div><div><dt>Hurð, hæð</dt><dd>4,35 m</dd></div><div><dt>Rafmagn</dt><dd>3ja fasa</dd></div><div><dt>Verð</dt><dd>24,9 m.kr.</dd></div></dl>
-        </a>
-      </div>
+      <div class="head"><div><p class="eyebrow" data-reveal>Eignir til sölu</p><h2 class="title t-l" data-split>Tvær eignir, öll svör á einum stað</h2></div><p class="lede" data-reveal style="max-width:26em">Myndir, skipulag, efnisval og kaupskilmálar fyrir hverja eign. Það sem er óstaðfest er merkt sem slíkt.</p></div>
+
+      <article class="feat">
+        
+<div class="rot" data-rotator>
+  <figure class="rot__f is-on"><img src="img/lod-front.webp" srcset="img/lod-front-800.webp 800w, img/lod-front.webp 1600w" sizes="(min-width:1000px) 58vw, 100vw" width="1600" height="1067" alt="Framhlið raðhúsanna við Loðmundartanga" loading="lazy" decoding="async"><figcaption><span>01</span>Framhlið</figcaption></figure>
+  <figure class="rot__f"><img src="img/lod-kitchen.webp" srcset="img/lod-kitchen-800.webp 800w, img/lod-kitchen.webp 1600w" sizes="(min-width:1000px) 58vw, 100vw" width="1600" height="1067" alt="Eldhús með Scavolini innréttingu" loading="lazy" decoding="async"><figcaption><span>02</span>Eldhús</figcaption></figure>
+  <figure class="rot__f"><img src="img/lod-pot.webp" srcset="img/lod-pot-800.webp 800w, img/lod-pot.webp 1600w" sizes="(min-width:1000px) 58vw, 100vw" width="1600" height="1067" alt="Heitur pottur á pallinum" loading="lazy" decoding="async"><figcaption><span>03</span>Pallur og pottur</figcaption></figure>
+  <div class="rot__dots"><button type="button" aria-label="Sýna: Framhlið" aria-current="true"></button><button type="button" aria-label="Sýna: Eldhús"></button><button type="button" aria-label="Sýna: Pallur og pottur"></button></div>
+</div>
+        <div class="feat__body">
+          <p data-reveal><span class="status status--light">Tilbúið til afhendingar</span></p>
+          <h3 class="title t-m" data-split>Loðmundartangi 13, 15, 17</h3>
+          <p class="where" data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Flúðir · Raðhús</p>
+          <dl class="feat__facts">
+            <div data-reveal><dt>Herbergi</dt><dd>4</dd></div><div data-reveal><dt>Stærð</dt><dd>132,1 m²</dd></div>
+            <div data-reveal><dt>Bílskúr</dt><dd>33,5 m²</dd></div><div data-reveal><dt>Verð</dt><dd>Ekki birt</dd></div>
+          </dl>
+          <div class="ctas" data-reveal><a class="btn btn--primary" href="lodmundartangi/">Skoða eignina <span class="arr" aria-hidden="true">→</span></a><button class="btn btn--line" type="button" data-request="lod">Óska eftir skoðun</button></div>
+        </div>
+      </article>
+
+      <article class="feat feat--rev">
+        
+<div class="rot" data-rotator>
+  <figure class="rot__f is-on"><img src="img/vest-door.webp" srcset="img/vest-door-800.webp 800w, img/vest-door.webp 1600w" sizes="(min-width:1000px) 58vw, 100vw" width="1600" height="1067" alt="Rýmið og innkeyrsluhurðin" loading="lazy" decoding="async"><figcaption><span>01</span>Innkeyrsluhurð</figcaption></figure>
+  <figure class="rot__f"><img src="img/vest-hall.webp" srcset="img/vest-hall-800.webp 800w, img/vest-hall.webp 1600w" sizes="(min-width:1000px) 58vw, 100vw" width="1600" height="1067" alt="Rýmið séð frá hurð" loading="lazy" decoding="async"><figcaption><span>02</span>Rýmið</figcaption></figure>
+  <figure class="rot__f"><img src="img/vest-air.webp" srcset="img/vest-air-800.webp 800w, img/vest-air.webp 1600w" sizes="(min-width:1000px) 58vw, 100vw" width="1600" height="1067" alt="Vesturbakki úr lofti" loading="lazy" decoding="async"><figcaption><span>03</span>Staðsetning</figcaption></figure>
+  <div class="rot__dots"><button type="button" aria-label="Sýna: Innkeyrsluhurð" aria-current="true"></button><button type="button" aria-label="Sýna: Rýmið"></button><button type="button" aria-label="Sýna: Staðsetning"></button></div>
+</div>
+        <div class="feat__body">
+          <p data-reveal><span class="status status--light">Til sölu</span></p>
+          <h3 class="title t-m" data-split>Vesturbakki 13</h3>
+          <p class="where" data-reveal><svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Þorlákshöfn · Geymslu- og atvinnubil</p>
+          <dl class="feat__facts">
+            <div data-reveal><dt>Stærð</dt><dd>72 m²</dd></div><div data-reveal><dt>Hurð, hæð</dt><dd>4,35 m</dd></div>
+            <div data-reveal><dt>Rafmagn</dt><dd>3ja fasa</dd></div><div data-reveal><dt>Auglýst verð</dt><dd>24,9 m.kr.</dd></div>
+          </dl>
+          <div class="ctas" data-reveal><a class="btn btn--primary" href="vesturbakki/">Skoða bilið <span class="arr" aria-hidden="true">→</span></a><button class="btn btn--line" type="button" data-request="vest">Óska eftir skoðun</button></div>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section class="section section--sand" id="um">
-    <div class="wrap split">
-      <div data-reveal>
-        <p class="eyebrow">Um Hvata</p>
-        <h2 class="title t-l" style="margin:12px 0 20px">Ungt félag, byggt á 40 ára reynslu</h2>
-        <p class="lede">Byggingafélagið Hvati ehf. var stofnað árið 2021. Eigendurnir hafa unnið við mannvirkjagerð í meira en fjóra áratugi, allt frá einkaheimilum til stórbygginga og opinberra verkefna.</p>
-        <dl class="stats"><div><dt>Stofnað</dt><dd>2021</dd></div><div><dt>Reynsla eigenda</dt><dd>40+ ár</dd></div><div><dt>Eignir í sölu</dt><dd>2</dd></div></dl>
+  <section class="section section--sand">
+    <div class="wrap">
+      <div class="head"><div><p class="eyebrow" data-reveal>Það sem fylgir · Loðmundartangi</p><h2 class="title t-l" data-split>Fullbúið, inn að síðasta smáatriði</h2></div>
+        <a class="btn btn--line" data-reveal href="lodmundartangi/#efni">Allt efnisval <span class="arr" aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="strip-car" data-carousel>
+      <div class="wrap car__top"><span></span><div class="car__nav"><span class="car__count">01 / 05</span><button class="car__btn prev" type="button" aria-label="Fyrri">←</button><button class="car__btn next" type="button" aria-label="Næsta">→</button></div></div>
+      <div class="car__track car__track--bleed" tabindex="0" aria-label="Það sem fylgir">
+        <a class="mcard" href="lodmundartangi/#efni"><span class="mcard__img"><img src="img/lod-kitchen.webp" srcset="img/lod-kitchen-800.webp 800w, img/lod-kitchen.webp 1600w" sizes="(min-width:900px) 30vw, 78vw" width="1600" height="1067" alt="Eldhús" loading="lazy" decoding="async"></span><b>Eldhús</b><span>Scavolini innrétting, Luna kvarts, Rafha tæki</span></a>
+        <a class="mcard" href="lodmundartangi/#efni"><span class="mcard__img"><img src="img/lod-living.webp" srcset="img/lod-living-800.webp 800w, img/lod-living.webp 1600w" sizes="(min-width:900px) 30vw, 78vw" width="1600" height="1067" alt="Stofa" loading="lazy" decoding="async"></span><b>Stofa</b><span>Soft Sand veggir, Victoria Ivory parket</span></a>
+        <a class="mcard" href="lodmundartangi/#efni"><span class="mcard__img"><img src="img/lod-pot.webp" srcset="img/lod-pot-800.webp 800w, img/lod-pot.webp 1600w" sizes="(min-width:900px) 30vw, 78vw" width="1600" height="1067" alt="Pallur" loading="lazy" decoding="async"></span><b>Pallur</b><span>Heitur pottur, hitastýring og WiFi</span></a>
+        <a class="mcard" href="lodmundartangi/#efni"><span class="mcard__img"><img src="img/lod-garage.webp" srcset="img/lod-garage-800.webp 800w, img/lod-garage.webp 1600w" sizes="(min-width:900px) 30vw, 78vw" width="1600" height="1067" alt="Bílskúr" loading="lazy" decoding="async"></span><b>Bílskúr</b><span>33,5 m², epoxy kvarts gólf</span></a>
+        <a class="mcard" href="lodmundartangi/#efni"><span class="mcard__img"><img src="img/lod-open.webp" srcset="img/lod-open-800.webp 800w, img/lod-open.webp 1600w" sizes="(min-width:900px) 30vw, 78vw" width="1600" height="1067" alt="Alrými" loading="lazy" decoding="async"></span><b>Alrými</b><span>Hljóðdúkur í loftum helstu rýma</span></a>
       </div>
-      <div data-reveal><img src="img/lod-row-air.webp" srcset="img/lod-row-air-800.webp 800w, img/lod-row-air.webp 1600w" sizes="(min-width:900px) 50vw, 100vw" width="1600" height="1067" alt="Raðhúsaröðin við Loðmundartanga og Flúðir í bakgrunni" loading="lazy" decoding="async"></div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="head" data-reveal><div><p class="eyebrow">Úr verkum okkar</p><h2 class="title t-l">Íbúðarhús og atvinnuhúsnæði</h2></div></div>
-      <div class="strip">
-        <figure data-reveal><img src="img/lod-front-wide.webp" srcset="img/lod-front-wide-800.webp 800w, img/lod-front-wide.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Raðhús við Loðmundartanga, Flúðum" loading="lazy" decoding="async"><figcaption>Raðhús · Flúðir</figcaption></figure>
-        <figure data-reveal><img src="img/verk-einbyli.webp" srcset="img/verk-einbyli-800.webp 800w, img/verk-einbyli.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Einbýlishús klætt dökkri bárujárnsklæðningu" loading="lazy" decoding="async"><figcaption>Einbýlishús</figcaption></figure>
-        <figure data-reveal><img src="img/verk-einbyli-2.webp" srcset="img/verk-einbyli-2-800.webp 800w, img/verk-einbyli-2.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Íbúðarhús á einni hæð" loading="lazy" decoding="async"><figcaption>Íbúðarhús</figcaption></figure>
-        <figure data-reveal><img src="img/verk-geymsla.webp" srcset="img/verk-geymsla-800.webp 800w, img/verk-geymsla.webp 1600w" sizes="(min-width:900px) 25vw, 50vw" width="1600" height="1067" alt="Geymsluhúsnæði með innkeyrsluhurðum" loading="lazy" decoding="async"><figcaption>Geymsluhúsnæði</figcaption></figure>
+      <div class="head"><div><p class="eyebrow" data-reveal>Úr verkum okkar</p><h2 class="title t-l" data-split>Íbúðarhús og atvinnuhúsnæði</h2></div></div>
+      <div class="mosaic">
+        <figure class="m1" data-clip><img src="img/lod-row-air.webp" srcset="img/lod-row-air-800.webp 800w, img/lod-row-air.webp 1600w" sizes="(min-width:900px) 60vw, 100vw" width="1600" height="1067" alt="Raðhúsaröð við Loðmundartanga, Flúðum" loading="lazy" decoding="async"><figcaption>Raðhús · Flúðir</figcaption></figure>
+        <figure class="m2" data-clip><img src="img/verk-einbyli.webp" srcset="img/verk-einbyli-800.webp 800w, img/verk-einbyli.webp 1600w" sizes="(min-width:900px) 34vw, 50vw" width="1600" height="1067" alt="Einbýlishús klætt dökkri klæðningu" loading="lazy" decoding="async"><figcaption>Einbýlishús</figcaption></figure>
+        <figure class="m3" data-clip><img src="img/verk-einbyli-2.webp" srcset="img/verk-einbyli-2-800.webp 800w, img/verk-einbyli-2.webp 1600w" sizes="(min-width:900px) 34vw, 50vw" width="1600" height="1067" alt="Íbúðarhús á einni hæð" loading="lazy" decoding="async"><figcaption>Íbúðarhús</figcaption></figure>
+        <figure class="m4" data-clip><img src="img/verk-geymsla.webp" srcset="img/verk-geymsla-800.webp 800w, img/verk-geymsla.webp 1600w" sizes="(min-width:900px) 60vw, 100vw" width="1600" height="1067" alt="Geymsluhúsnæði með innkeyrsluhurðum" loading="lazy" decoding="async"><figcaption>Geymsluhúsnæði</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section class="section section--ink" id="thjonusta">
     <div class="wrap">
-      <div class="head" data-reveal><div><p class="eyebrow">Þjónusta</p><h2 class="title t-l">Byggjum fyrir þig</h2></div><a class="btn btn--light" href="hafa-samband/?erindi=byggja">Ræða verkefni <span class="arr" aria-hidden="true">→</span></a></div>
-      <div class="svc">
-        <div data-reveal><h3>Íbúðarhúsnæði</h3><p>Einbýli, raðhús og fjölbýli, frá skipulagi til afhendingar.</p></div>
-        <div data-reveal><h3>Atvinnuhúsnæði</h3><p>Geymslu-, lager- og atvinnubil með mikilli lofthæð.</p></div>
-        <div data-reveal><h3>Verkefnaþróun</h3><p>Frá lóð og hugmynd að tilbúnu verkefni.</p></div>
-        <div data-reveal><h3>Heildarlausnir</h3><p>Eitt félag ber ábyrgð á verkinu frá upphafi til enda.</p></div>
-      </div>
+      <div class="head"><div><p class="eyebrow" data-reveal>Þjónusta</p><h2 class="title t-l" data-split>Byggjum fyrir þig</h2></div><a class="btn btn--light" data-reveal href="hafa-samband/?erindi=byggja">Ræða verkefni <span class="arr" aria-hidden="true">→</span></a></div>
+      <ol class="svc2">
+        <li data-reveal><span class="n">01</span><h3>Íbúðarhúsnæði</h3><p>Einbýli, raðhús og fjölbýli, frá skipulagi til afhendingar.</p></li>
+        <li data-reveal><span class="n">02</span><h3>Atvinnuhúsnæði</h3><p>Geymslu-, lager- og atvinnubil með mikilli lofthæð.</p></li>
+        <li data-reveal><span class="n">03</span><h3>Verkefnaþróun</h3><p>Frá lóð og hugmynd að tilbúnu verkefni.</p></li>
+        <li data-reveal><span class="n">04</span><h3>Heildarlausnir</h3><p>Eitt félag ber ábyrgð á verkinu frá upphafi til enda.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" data-parallax>
+    <img src="img/lod-fludir-air.webp" srcset="img/lod-fludir-air-800.webp 800w, img/lod-fludir-air.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Byggðin á Flúðum úr lofti" loading="lazy" decoding="async">
+    <div class="wrap band__in">
+      <p class="eyebrow">Skoðun</p>
+      <h2 class="title t-l" data-split>Komdu og sjáðu húsin á Flúðum</h2>
+      <div class="ctas" data-reveal><button class="btn btn--light" type="button" data-request="lod">Óska eftir skoðun <span class="arr" aria-hidden="true">→</span></button><a class="btn btn--line" href="tel:+3548930422">893 0422</a></div>
     </div>
   </section>
 </main>
 <footer class="ftr">
   <div class="wrap">
+    <div class="ftr__big" data-reveal><p>Viltu skoða?</p><a href="tel:+3548930422">893 0422</a></div>
     <div class="grid">
       <div><a class="brand" href="" style="color:#fff"><img src="img/logo.png" width="26" height="38" alt=""><div><b>HVATI</b><span>BYGGINGAFÉLAG</span></div></a>
         <p style="margin:18px 0 0;max-width:22em">Vönduð íbúðarhús og atvinnuhúsnæði á Suðurlandi, byggð á meira en 40 ára reynslu eigendanna.</p></div>
@@ -117,6 +190,7 @@
     <div class="legal"><span>© Byggingafélagið Hvati ehf.</span><span>Frumgerð frá SNDR Studio. Ekkert er sent úr þessari útgáfu.</span></div>
   </div>
 </footer>
+
 
 <dialog class="sheet" id="sheet" aria-labelledby="sheet-t" tabindex="-1">
   <div class="sheet__in">

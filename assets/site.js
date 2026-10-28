@@ -77,7 +77,7 @@
     });
 
     var dim = document.querySelector('.door__dim');
-    if (dim) { G.set(dim, { autoAlpha: 0 }); onEnter([dim], function () { G.to(dim, { autoAlpha: 1, duration: 0.8, delay: 0.9 }); }); }
+    if (dim) { G.set(dim, { autoAlpha: 0 }); onEnter([dim.closest('.door') || dim], function () { G.to(dim, { autoAlpha: 1, duration: 0.8, delay: 0.9 }); }); }
 
     // Refresh trigger positions once fonts and late images settle.
     if (document.fonts) document.fonts.ready.then(function () { ST.refresh(); });
